@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CS416 Final Project Human Development Index Narrative Visualization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="slider">
+  <div class="slides">
+    <ul class="frame">
+      <li class="slide active">
+        <svg id="svg1" width="960" height="500"></svg>
+      </li>
+      <li class="slide">
+        <svg id="svg2" width="960" height="500"></svg>
+      </li>
+      <li class="slide">
+        <div id="menus">
+          <span id="y-menu"></span>
+          vs.
+          <span id="x-menu"></span>
+        </div>
+        <svg id="svg3" width="960" height="471"></svg>
+      </li>
+    </ul>
+  </div>
+  <button class="prev">previous</button>
+  <button class="next">next</button>
+</div>
+<!-- partial -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+  <script  src="./script.js"></script>    
+  <script type="module" src="./scatter/index.js"></script>
+  <script type="module" src="./scatter/dropdownMenu.js"></script>
+  <script type="module" src="./scatter/scatterPlot.js"></script>
+  <script type="module" src="./line/index.js"></script>
+    <script type="module" src="./line/loadAndProcessData.js"></script>
+    <script type="module" src="./line/lineChart.js"></script>
+    <script type="module" src="./line/colorLegend.js"></script>
+    <script type="module" src="./map/index.js"></script>
+</body>
+</html>

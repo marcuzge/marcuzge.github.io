@@ -1,0 +1,120 @@
+/* JS manipulated styles */
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: inline-block;
+}
+
+/* Appearance Styles */
+
+.slider {
+  margin: 0 auto;
+}
+
+@media (min-width: 1000px) {
+  .slider {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+  .slides {
+  }
+    .frame{
+    }
+      .slide {
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+        font-size: 3rem;
+        color: white;
+      }
+
+  .prev, .next {
+    height: 2rem;
+    border: 0;
+  }
+
+  .prev:hover, .next:hover {
+    color: white;
+    background: #333;
+  }
+
+
+  body {
+    margin: 0px;
+    overflow: hidden;
+  }
+  
+  .scatter-circle {
+    fill: red;
+    opacity: 0.3;
+  }
+  
+  text {
+    font-family: sans-serif;
+  }
+  
+  .tick text {
+    font-size: 1em;
+    fill: #635F5D;
+  }
+
+  .tick-legend text {
+    font-size: 0.3em;
+    fill: #635F5D;
+  }
+  
+  .tick line {
+    stroke: #C0C0BB;
+  }
+  
+  .axis-label {
+    font-size: 2em;
+    fill: #8E8883;
+  }
+  
+  #menus {
+    font-size: 0.5em;
+    text-align: center;
+  }
+  
+  #menus select {
+    font-size: 1rem;
+  }
+
+  .line-path {
+    fill: none;
+    
+    stroke-width: 5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    mix-blend-mode: multiply;
+  }
+  
+  .title {
+    font-size: 0.5em;
+    fill: #635F5D;
+  }
+
+  .selected-year-line {
+    stroke: black;
+    stroke-width: 5;
+  }
+
+  .sphere {
+    fill: #26d50f30;
+  }
+  
+  .country {
+    fill: #eee190;
+    stroke: black;
+    stroke-width: 0.05px;
+  }
+  
+  .country:hover {
+    fill: red;
+  }
