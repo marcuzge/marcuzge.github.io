@@ -4,21 +4,16 @@ import {
 
 export const lineChart = (selection, props) => {
   const {
-    colorValue,
     colorScale,
     yValue,
-    title,
     xValue,
     xAxisLabel,
-    circleRadius,
     yAxisLabel,
     margin,
     width,
     height,
     data,
-    nested,
-    selectedYear,
-    setSelectedYear
+    nested
   } = props;
 
   const innerWidth = width - margin.left - margin.right;
@@ -108,35 +103,4 @@ export const lineChart = (selection, props) => {
     .merge(linePaths)
       .attr('d', d => lineGenerator(d.values))
       .attr('stroke', d => colorScale(d.key));
-  
-  // const selectedYearDate = parseYear(selectedYear);
-  // gEnter
-  //   .append('line')
-  //     .attr('class', 'selected-year-line')
-  //     .attr('y1', 0)
-  //   .merge(g.select('.selected-year-line'))
-  //     .attr('x1', xScale(selectedYearDate))
-  //     .attr('x2', xScale(selectedYearDate))
-  //     .attr('y2', innerHeight);
-  
-  gEnter
-    .append('text')
-      .attr('class', 'title')
-      .attr('y', -10)
-    .merge(g.select('.title'))
-      .text(title);
-  
-  gEnter
-    .append('rect')
-      .attr('class', 'mouse-interceptor')
-      .attr('fill', 'none')
-      .attr('pointer-events', 'all')
-    .merge(g.select('.mouse-interceptor'))
-      .attr('width', innerWidth)
-      .attr('height', innerHeight)
-      .on('mousemove', function() {
-        const x = d3.mouse(this)[0];
-        const hoveredDate = xScale.invert(x);
-        setSelectedYear(hoveredDate.getFullYear());
-      });
 };

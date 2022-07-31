@@ -8,28 +8,50 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <div class="slider">
   <div class="slides">
     <ul class="frame">
       <li class="slide active">
+        <p> 2019 Human Development Index (HDI) on a World Map </p>
         <svg id="svg1" width="960" height="500"></svg>
+        <p class="notes">
+          The first chart shows a World Map of each country's Human Development Index when the mouse is hovered above a specific country. However
+          it is difficult to see the trend or the correlations between variables used to calculate the HDI index.
+        </p>
+        <p class="notes">
+          So let's move on to the next scene.
+        </p>
       </li>
       <li class="slide">
+        <p> Human Development Index (HDI) over Time by Region </p>
         <svg id="svg2" width="960" height="500"></svg>
+        <p class="notes">
+          The second chart shows the trend of HDI index over time from 1990 - 2019 by Regions. As we can see, the general trend of the Human Development Index
+          is increasing steadily, meaning the standard of living across the globe is better nowadays comparing to the 90s. 
+          However, you can observe interesting intersections on the graph. For example in 2006, EAST ASIA & PACIFIC's HDI index surpassed ARAB STATES's. 
+        </p>
       </li>
       <li class="slide">
+        <p> Can you find the correlations? </p>
         <div id="menus">
+          Y-aixs
           <span id="y-menu"></span>
           vs.
           <span id="x-menu"></span>
+          X-axis
         </div>
         <svg id="svg3" width="960" height="471"></svg>
+        <p class="notes">
+          By changing X-axis and Y-axis parameters, we can observe that HDI index correlates to Life Expectency at Birth, Expected Years of Schooling, GNI per Capita etc.
+          These are some of the variables used to calculate the HDI index. For example, countries with higher Expected Years of Schooling tend to have higher Human Development Index as well. 
+        </p>
       </li>
     </ul>
   </div>
-  <button class="prev">previous</button>
-  <button class="next">next</button>
+  <div class="buttons">
+    <button class="prev">previous</button>
+    <button class="next">next</button>
+  </div>
 </div>
 <!-- partial -->
 <script src="https://d3js.org/d3.v5.min.js"></script>

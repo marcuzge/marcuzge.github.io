@@ -12,13 +12,7 @@ const width = +svg.attr('width');
 const height = +svg.attr('height');
 
 // State
-let selectedYear = 2018;
 let data;
-
-const setSelectedYear = year => {
-  selectedYear = year;
-  render();
-};
 
 const render = () => {
   const yValue = d => d.hdi;
@@ -39,12 +33,9 @@ const render = () => {
   
   lineChartG.call(lineChart, {
     colorScale,
-    colorValue,
     yValue,
-    title: 'Human Development Index (HDI) over Time by Region',
     xValue: d => d.year,
     xAxisLabel: 'Time',
-    circleRadius: 6,
     yAxisLabel: 'Human Development Index',
     margin: {
       top: 60,
@@ -55,9 +46,7 @@ const render = () => {
     width,
     height,
     data,
-    nested,
-    selectedYear,
-    setSelectedYear
+    nested
   });
   
   colorLegendG
