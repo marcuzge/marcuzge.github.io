@@ -1,16 +1,3 @@
-/*
-
-  The DOM structure looks like this:
-
-  <select>
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-
-*/
-
 export const dropdownMenu = (selection, props) => {
   const {
     options,

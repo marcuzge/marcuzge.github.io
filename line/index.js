@@ -14,6 +14,32 @@ const height = +svg.attr('height');
 // State
 let data;
 
+const annotations = [
+  {
+    note: {
+      label: "At this intersection, EAST ASIA's HDI index surpassed ARAB STATES' in 2006.",
+      title: ""
+    },
+    type: d3.annotationCalloutCircle,
+    subject: {
+      radius: 20,         // circle radius
+      radiusPadding: 20   // white space around circle befor connector
+    },
+    color: ["red"],
+    x: 420,
+    y: 190,
+    dy: 80,
+    dx: 80
+  }
+]
+
+// Add annotation to the chart
+const makeAnnotations = d3.annotation()
+  .annotations(annotations)
+svg
+  .append("g")
+  .call(makeAnnotations)
+
 const render = () => {
   const yValue = d => d.hdi;
   const colorValue = d => d.name;

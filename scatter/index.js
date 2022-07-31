@@ -10,6 +10,27 @@ let data;
 let xColumn;
 let yColumn;
 
+const annotations = [
+  {
+    note: {
+      label: "Note here each dot represents a country.",
+      title: ""
+    },
+    color: ["red"],
+    x: 675,
+    y: 303,
+    dy: 80,
+    dx: 80
+  }
+]
+
+// Add annotation to the chart
+const makeAnnotations = d3.annotation()
+  .annotations(annotations)
+svg
+  .append("g")
+  .call(makeAnnotations)
+
 const onXColumnClicked = column => {
   xColumn = column;
   render();

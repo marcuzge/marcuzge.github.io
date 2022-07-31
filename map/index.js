@@ -3,6 +3,27 @@ const svg = d3.select('#svg1');
 const projection = d3.geoNaturalEarth1();
 const pathGenerator = d3.geoPath().projection(projection);
 
+const annotations = [
+  {
+    note: {
+      label: "Try hovering on a country to see more details!",
+      title: ""
+    },
+    color: ["red"],
+    x: 575,
+    y: 333,
+    dy: 80,
+    dx: 80
+  }
+]
+
+// Add annotation to the chart
+const makeAnnotations = d3.annotation()
+  .annotations(annotations)
+svg
+  .append("g")
+  .call(makeAnnotations)
+
 const g = svg.append('g');
 
 g.append('path')
