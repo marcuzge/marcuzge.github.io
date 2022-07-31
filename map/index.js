@@ -42,7 +42,6 @@ Promise.all([
   const countryName = {};
   hdiData.forEach(d => {
     countryName[d.iso_n3] = [d.Country, d.Human_Development_Index, d.Life_Expectancy_At_Birth, d.Expected_Years_Of_Schooling, d.Mean_Years_Of_Schooling, d.GNI_Per_Capita];
-    console.log(countryName[d.iso_n3][0])
   });
 
   

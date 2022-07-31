@@ -72,7 +72,6 @@ const render = () => {
 
 d3.csv('hdi.csv')
   .then(loadedData => {
-    console.log(loadedData);
     data = loadedData;
     data.forEach(d => {
       d.HDI_Rank = +d.HDI_Rank;
@@ -85,7 +84,6 @@ d3.csv('hdi.csv')
       d.GNI_Per_Capita_Rank_Minus_HDI_Rank = +d.GNI_Per_Capita_Rank_Minus_HDI_Rank;
     });
 
-    console.log(data.GNI_Per_Capita);
     xColumn = data.columns[4];
     yColumn = data.columns[2];
     render();

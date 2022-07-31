@@ -126,6 +126,7 @@
 
   .buttons {
     float: right;
+    margin-right: 1em;
   }
 
   .prev, .next {
@@ -204,4 +205,12 @@
 
   .annotation-note-label {
     font-size: 0.2em;
+  }
+
+  .panel {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.25em;
+    color: black;
+    padding-bottom: .5em;
   }

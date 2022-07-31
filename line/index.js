@@ -10,6 +10,13 @@ const colorLegendG = svg.append('g');
 
 const width = +svg.attr('width');
 const height = +svg.attr('height');
+const mapping = {
+  "europe": "EUROPE AND CENTRAL ASIA", 
+  "latin": "LATIN AMERICA & CARRIBIAN",
+  "asia": "EAST ASIA & PACIFIC",
+  "arab": "ARAB STATES",
+  "sasia": "SOUTH ASIA",
+  "africa": "SUB-SAHARAN AFRICA"}
 
 // State
 let data;
@@ -54,6 +61,8 @@ const render = () => {
     .sort((a, b) =>
       d3.descending(lastYValue(a), lastYValue(b))
     );
+
+  console.log(nested);
   
   colorScale.domain(nested.map(d => d.key));
   
@@ -89,4 +98,21 @@ loadAndProcessData()
   .then((loadedData) => {
     data = loadedData;
     render();
+  });
+
+
+  d3.selectAll('.slide .panel input')
+  .on('change', function() {
+    loadAndProcessData()
+      .then((loadedData) => {
+        data = loadedData;
+        for (var key in mapping) {
+          var typeFilterChecked = d3.select('.slide .panel input.' + key).property('checked');
+          if (!typeFilterChecked) {
+            data = data.filter(d => d['name'] !== mapping[key]);
+          }  
+        }
+        svg.selectAll(".line-path").remove();
+        render();
+      });
   });
